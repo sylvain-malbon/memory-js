@@ -118,7 +118,7 @@ h1 {
 
 /* Face avant */
 .card-front {
-  background: transparent;
+  background: #fff;
   font-size: 2.2rem;
   z-index: 2;
 }
