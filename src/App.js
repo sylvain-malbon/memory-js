@@ -3,9 +3,10 @@ import "./App.css";
 import Title from "./Components/Title/Title";
 import Button from "./Components/Button/Button";
 import Card from "./Components/Card/Card";
+import DifficultySelector from "./Components/DifficultySelector/DifficultySelector";
 
 // 48 drapeaux européens + occidentaux
-const images = [
+const allFlags = [
   "🇩🇪", "🇦🇹", "🇧🇪", "🇧🇬", "🇨🇾", "🇭🇷", "🇩🇰", "🇪🇸", "🇪🇪", "🇫🇮", "🇫🇷", "🇬🇷",
   "🇭🇺", "🇮🇪", "🇮🇹", "🇱🇻", "🇱🇹", "🇱🇺", "🇲🇹", "🇳🇱", "🇵🇱", "🇵🇹", "🇨🇿", "🇷🇴",
   "🇸🇰", "🇸🇮", "🇸🇪",
@@ -15,18 +16,27 @@ const images = [
 ];
 
 function App() {
+  const [difficulty, setDifficulty] = useState('beginner');
   const [cards, setCards] = useState([]);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [win, setWin] = useState(false);
 
+  // Sélectionne les drapeaux selon la difficulté
+  const getFlagsByDifficulty = () => {
+    if (difficulty === 'beginner') return allFlags.slice(0, 8);
+    if (difficulty === 'intermediate') return allFlags.slice(0, 18);
+    return allFlags;
+  };
+
   // Mélanger les cartes
   const shuffleCards = () => {
-    const duplicated = [...images, ...images]; // créer les paires
+    const selectedFlags = getFlagsByDifficulty();
+    const duplicated = [...selectedFlags, ...selectedFlags]; // créer les paires
     const shuffled = duplicated
-      .map((img) => ({
-        id: Math.random(),
+      .map((img, idx) => ({
+        id: `${img}-${idx}-${Math.random()}`,
         image: img,
         matched: false
       }))
@@ -38,10 +48,11 @@ function App() {
     setWin(false);
   };
 
-  // Lancer une partie au chargement
+  // Lancer une partie au chargement ou au changement de difficulté
   useEffect(() => {
     shuffleCards();
-  }, []);
+    // eslint-disable-next-line
+  }, [difficulty]);
 
   // Gestion du clic sur une carte
   const handleChoice = (card) => {
@@ -91,6 +102,8 @@ function App() {
   return (
     <div className="App">
       <Title />
+
+      <DifficultySelector value={difficulty} onChange={setDifficulty} />
 
       <Button text="Relancer la partie" onClick={shuffleCards} />
 
