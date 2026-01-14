@@ -86,7 +86,7 @@
   justify-content: center;
 }
 body {
-  background: linear-gradient(135deg, #0f2817 0%, #1a4520 100%);
+  background: #1a4520;
   min-height: 100vh;
   margin: 0;
   font-family: 'Segoe UI', 'Roboto', sans-serif;
@@ -212,7 +212,7 @@ body {
 
 /* BACK */
 .card-back {
-  background: linear-gradient(135deg, #b22222 0%, #8b1a1a 100%);
+  background: #b22222;
   border-color: rgba(212, 180, 76, 0.5);
 }
 

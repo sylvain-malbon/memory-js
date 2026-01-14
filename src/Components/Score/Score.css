@@ -10,7 +10,7 @@
   letter-spacing: 1px;
   font-family: inherit;
   margin: 0 0 30px 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  /* box-shadow supprimé */
   border: none;
   transition: all 0.2s ease;
 }
