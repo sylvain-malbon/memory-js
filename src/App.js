@@ -102,7 +102,7 @@ function App() {
   return (
     <div className="App">
       <div className="header-row">
-        <h1>Memory Game</h1>
+        <h1>Memory-JS</h1>
         <div className="difficulty-and-restart">
           {/* Suppression du texte 'Niveau de diff :' */}
           <DifficultySelector value={difficulty} onChange={setDifficulty} />
