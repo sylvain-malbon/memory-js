@@ -25,9 +25,22 @@ function App() {
 
   // Sélectionne les drapeaux selon la difficulté
   const getFlagsByDifficulty = () => {
-    if (difficulty === 'beginner') return allFlags.slice(0, 8);
-    if (difficulty === 'intermediate') return allFlags.slice(0, 18);
-    return allFlags;
+    switch (difficulty) {
+      case 'beginner':
+        return allFlags.slice(0, 8); // 8 paires, 16 cartes
+      case 'intermediate':
+        return allFlags.slice(0, 16); // 16 paires, 32 cartes
+      case 'advanced':
+        return allFlags.slice(0, 24); // 24 paires, 48 cartes
+      case 'expert':
+        return allFlags.slice(0, 32); // 32 paires, 64 cartes
+      case 'master':
+        return allFlags.slice(0, 40); // 40 paires, 80 cartes
+      case 'legend':
+        return allFlags.slice(0, 48); // 48 paires, 96 cartes
+      default:
+        return allFlags.slice(0, 8);
+    }
   };
 
   // Mélanger les cartes

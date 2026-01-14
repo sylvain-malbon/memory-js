@@ -20,27 +20,29 @@ body {
 
 .header-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 32px;
-  margin-bottom: 30px;
-  margin-top: -10px;
+  gap: 24px;
+  margin-bottom: 32px;
+  margin-top: 0;
+  padding-left: 0;
 }
 
 .header-row h1 {
   font-size: 2.5rem;
   font-weight: 600;
   color: #ffd700;
-  margin: 20px 0 0 0;
+    margin: 0;
   letter-spacing: 2px;
-  text-transform: uppercase;
+    /* text-transform supprimé pour permettre les majuscules */
 }
 
 .difficulty-and-restart {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 8px;
+  gap: 12px;
+  margin-top: 0;
+  margin-left: 0;
 }
 
 .difficulty-label {
@@ -53,39 +55,51 @@ body {
 /* --- DIFFICULTY SELECTOR --- */
 .difficulty-selector {
   display: flex;
-  gap: 12px;
-  margin: 0 0 10px 0;
-  justify-content: center;
-  flex-wrap: wrap;
+    gap: 6px; /* valeur actuelle, modifiable */
+    gap: 16px;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .difficulty-selector label {
-  background: rgba(20, 60, 30, 0.6);
-  border-radius: 8px;
-  padding: 10px 24px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  color: #d4b44c;
+  background: #ffd700;
+  border-radius: 20px;
+  padding: 6px 8px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1a3a1a;
   cursor: pointer;
-  border: 2px solid rgba(212, 180, 76, 0.4);
-  transition: all 0.2s ease;
+  border: none;
+  box-shadow: none;
+  transition: none;
+  display: flex;
+  align-items: center;
+     /* text-transform supprimé pour permettre les majuscules */
+  letter-spacing: 1px;
 }
 
 .difficulty-selector label:hover {
-  background: rgba(20, 60, 30, 0.8);
-  border-color: #ffd700;
+  background: #ffd700;
+  color: #1a3a1a;
+  box-shadow: none;
+  border: none;
+  transition: none;
 }
 
 .difficulty-selector input[type="radio"] {
   accent-color: #ffd700;
   margin-right: 8px;
   cursor: pointer;
+  vertical-align: middle;
 }
 
 .difficulty-selector label:has(input:checked) {
-  background: rgba(178, 34, 34, 0.7);
-  border-color: #ffd700;
-  color: #ffd700;
+  background: #ffd700;
+  color: #1a3a1a;
+  box-shadow: none;
+  border: none;
 }
 
 /* --- BOARD --- */
@@ -174,29 +188,33 @@ body {
 
 /* --- BUTTON --- */
 button {
-  background: #d4b44c;
+  background: #ffd700;
   color: #1a3a1a;
   border: none;
-  border-radius: 8px;
-  padding: 12px 32px;
+  border-radius: 20px;
+  padding: 6px 8px;
   font-size: 1rem;
   font-weight: 600;
-  text-transform: uppercase;
+     /* text-transform supprimé pour permettre les majuscules */
   cursor: pointer;
-  transition: all 0.2s ease;
+  box-shadow: none;
+  transition: none;
   letter-spacing: 1px;
-  margin: 20px 0 30px 0;
+  margin: 0 0 0 16px;
+  white-space: nowrap;
 }
 
 button:hover,
 button:focus {
   background: #ffd700;
   outline: none;
-  transform: translateY(-1px);
+  box-shadow: none;
+  border: none;
+  transition: none;
 }
 
 button:active {
-  transform: translateY(0);
+  background: #ffd700;
 }
 
 /* --- WIN MESSAGE --- */
@@ -206,7 +224,7 @@ button:active {
   margin: 0 0 20px 0;
   font-weight: 600;
   letter-spacing: 2px;
-  text-transform: uppercase;
+     /* text-transform supprimé pour permettre les majuscules */
   padding: 16px 32px;
   background: rgba(178, 34, 34, 0.4);
   border: 2px solid #ffd700;

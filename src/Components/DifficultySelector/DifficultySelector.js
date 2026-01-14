@@ -27,11 +27,41 @@ function DifficultySelector({ value, onChange }) {
                 <input
                     type="radio"
                     name="difficulty"
+                    value="advanced"
+                    checked={value === 'advanced'}
+                    onChange={() => onChange('advanced')}
+                />
+                Avancé
+            </label>
+            <label>
+                <input
+                    type="radio"
+                    name="difficulty"
                     value="expert"
                     checked={value === 'expert'}
                     onChange={() => onChange('expert')}
                 />
                 Expert
+            </label>
+            <label>
+                <input
+                    type="radio"
+                    name="difficulty"
+                    value="master"
+                    checked={value === 'master'}
+                    onChange={() => onChange('master')}
+                />
+                Maître
+            </label>
+            <label>
+                <input
+                    type="radio"
+                    name="difficulty"
+                    value="legend"
+                    checked={value === 'legend'}
+                    onChange={() => onChange('legend')}
+                />
+                Légende
             </label>
         </div>
     );
