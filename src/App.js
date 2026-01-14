@@ -4,6 +4,7 @@ import Title from "./Components/Title/Title";
 import Button from "./Components/Button/Button";
 import Card from "./Components/Card/Card";
 import DifficultySelector from "./Components/DifficultySelector/DifficultySelector";
+import Score from "./Components/Score/Score";
 
 // 48 drapeaux européens + occidentaux
 const allFlags = [
@@ -22,6 +23,7 @@ function App() {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [win, setWin] = useState(false);
+  const [score, setScore] = useState(0);
 
   // Sélectionne les drapeaux selon la difficulté
   const getFlagsByDifficulty = () => {
@@ -59,6 +61,7 @@ function App() {
     setChoiceOne(null);
     setChoiceTwo(null);
     setWin(false);
+    setScore(0);
   };
 
   // Lancer une partie au chargement ou au changement de difficulté
@@ -90,6 +93,7 @@ function App() {
             card.image === choiceOne.image ? { ...card, matched: true } : card
           )
         );
+        setScore((prevScore) => prevScore + 1);
         resetTurn();
       } else {
         // Retourner après un délai
@@ -114,12 +118,15 @@ function App() {
 
   return (
     <div className="App">
+
       <div className="header-row">
-        <h1>Memory-JS</h1>
-        <div className="difficulty-and-restart">
-          {/* Suppression du texte 'Niveau de diff :' */}
+        <div className="title-score-row">
+          <h1>Memory-JS</h1>
+          <Button text="Relancer la partie" onClick={shuffleCards} className="restart-btn" />
+          <Score score={score} />
+        </div>
+        <div className="difficulty-restart-row">
           <DifficultySelector value={difficulty} onChange={setDifficulty} />
-          <Button text="Relancer la partie" onClick={shuffleCards} />
         </div>
       </div>
 

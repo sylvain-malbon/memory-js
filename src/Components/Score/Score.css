@@ -1,0 +1,29 @@
+.score-container {
+  display: inline-block;
+  background: #d4b44c;
+  color: #1a3a1a;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: inherit;
+  margin: 0 0 30px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.score-container:hover,
+.score-container:focus {
+  background: #ffd700;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.score-value {
+  color: #b22222;
+  margin-left: 0.5rem;
+  font-weight: 700;
+}
