@@ -1,35 +1,52 @@
-/* --- SCORE CONTAINER (WESTERN THEME) --- */
+/* Import optionnel d'une police Western via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
+/* --- SCORE CONTAINER (WESTERN THEME UPGRADED) --- */
 .score-container {
   display: inline-block;
   background: #c9a24d;
-  /* or patiné */
   color: #2a1f14;
-  /* brun foncé */
-  border-radius: 8px;
-  padding: 12px 32px;
-  font-size: 1rem;
+
+  /* Ajout d'une bordure pour le côté "Enseigne" */
+  border: 2px solid #2a1f14;
+  border-radius: 4px;
+  /* Un peu plus carré fait plus "rustique" */
+
+  padding: 10px 32px;
+  /* Ajusté pour compenser la bordure */
+  font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: inherit;
+  letter-spacing: 2px;
+  /* Espacement accentué */
+
+  /* Utilisation d'une police Western si possible, sinon Serif */
+  font-family: 'Rye', 'Courier New', serif;
+
   margin: 0 0 30px 0;
-  border: none;
-  transition: all 0.2s ease;
+  cursor: default;
+  /* Ou pointer si c'est cliquable */
+
+  /* Ombre portée "dure" pour un effet 3D rétro */
+  box-shadow: 4px 4px 0px #2a1f14;
+
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* --- SCORE HOVER / FOCUS --- */
-.score-container:hover,
-.score-container:focus {
+/* --- SCORE HOVER --- */
+.score-container:hover {
   background: #e3c76a;
-  /* or clair */
-  outline: none;
-  transform: translateY(-1px);
+  transform: translate(-2px, -2px);
+  /* Mouvement opposé à l'ombre */
+  box-shadow: 6px 6px 0px #2a1f14;
+  /* L'ombre grandit */
 }
 
 /* --- SCORE VALUE --- */
 .score-value {
   color: #8b2c2c;
-  /* rouge brique */
   margin-left: 0.5rem;
   font-weight: 700;
+  /* Petite ombre claire pour creuser le texte (optionnel) */
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
 }
