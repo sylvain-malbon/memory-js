@@ -12,115 +12,77 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 20px 60px;
+  padding: 40px 20px 60px;
   text-align: center;
 }
 
 /* --- TITLE --- */
-
-.header-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  margin-bottom: 32px;
-  margin-top: 0;
-  padding-left: 0;
-}
-
-.header-row h1 {
+.App h1 {
   font-size: 2.5rem;
   font-weight: 600;
   color: #ffd700;
-    margin: 0;
+  margin: 0 0 30px 0;
   letter-spacing: 2px;
-    /* text-transform supprimé pour permettre les majuscules */
-}
-
-.difficulty-and-restart {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 0;
-  margin-left: 0;
-}
-
-.difficulty-label {
-  font-size: 1.1rem;
-  color: #ffd700;
-  font-weight: 500;
-  margin-right: 8px;
+  text-transform: uppercase;
 }
 
 /* --- DIFFICULTY SELECTOR --- */
 .difficulty-selector {
   display: flex;
-    gap: 6px; /* valeur actuelle, modifiable */
-    gap: 16px;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  gap: 12px;
+  margin: 0 0 30px 0;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .difficulty-selector label {
-  background: #ffd700;
-  border-radius: 20px;
-  padding: 6px 8px;
-  white-space: nowrap;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #1a3a1a;
+  background: rgba(20, 60, 30, 0.6);
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #d4b44c;
   cursor: pointer;
-  border: none;
-  box-shadow: none;
-  transition: none;
-  display: flex;
-  align-items: center;
-     /* text-transform supprimé pour permettre les majuscules */
-  letter-spacing: 1px;
+  border: 2px solid rgba(212, 180, 76, 0.4);
+  transition: all 0.2s ease;
 }
 
 .difficulty-selector label:hover {
-  background: #ffd700;
-  color: #1a3a1a;
-  box-shadow: none;
-  border: none;
-  transition: none;
+  background: rgba(20, 60, 30, 0.8);
+  border-color: #ffd700;
 }
 
 .difficulty-selector input[type="radio"] {
   accent-color: #ffd700;
   margin-right: 8px;
   cursor: pointer;
-  vertical-align: middle;
 }
 
 .difficulty-selector label:has(input:checked) {
-  background: #ffd700;
-  color: #1a3a1a;
-  box-shadow: none;
-  border: none;
+  background: rgba(178, 34, 34, 0.7);
+  border-color: #ffd700;
+  color: #ffd700;
 }
 
 /* --- BOARD --- */
 .board {
   display: grid;
-  grid-template-columns: repeat(8, 120px);
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, 80px);
+  gap: 16px;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 30px 40px 40px 40px;
+  padding: 30px;
   background: rgba(10, 30, 15, 0.5);
-  border-radius: 20px;
-  border: 2px solid rgba(212, 180, 76, 0.4);
+  border-radius: 16px;
+  border: 1px solid rgba(212, 180, 76, 0.3);
 }
 
 /* --- CARD CONTAINER --- */
 .card {
-  width: 120px;
-  height: 160px;
-  perspective: 1200px;
+  width: 80px;
+  height: 105px;
+  perspective: 1000px;
   cursor: pointer;
   transition: transform 0.15s ease;
 }
@@ -182,39 +144,35 @@ body {
 
 /* --- EMOJI --- */
 .emoji {
-  font-size: 4rem;
+  font-size: 2.8rem;
   transform: rotateY(180deg);
 }
 
 /* --- BUTTON --- */
 button {
-  background: #ffd700;
+  background: #d4b44c;
   color: #1a3a1a;
   border: none;
-  border-radius: 20px;
-  padding: 6px 8px;
+  border-radius: 8px;
+  padding: 12px 32px;
   font-size: 1rem;
   font-weight: 600;
-     /* text-transform supprimé pour permettre les majuscules */
+  text-transform: uppercase;
   cursor: pointer;
-  box-shadow: none;
-  transition: none;
+  transition: all 0.2s ease;
   letter-spacing: 1px;
-  margin: 0 0 0 16px;
-  white-space: nowrap;
+  margin: 0 0 30px 0;
 }
 
 button:hover,
 button:focus {
   background: #ffd700;
   outline: none;
-  box-shadow: none;
-  border: none;
-  transition: none;
+  transform: translateY(-1px);
 }
 
 button:active {
-  background: #ffd700;
+  transform: translateY(0);
 }
 
 /* --- WIN MESSAGE --- */
@@ -224,7 +182,7 @@ button:active {
   margin: 0 0 20px 0;
   font-weight: 600;
   letter-spacing: 2px;
-     /* text-transform supprimé pour permettre les majuscules */
+  text-transform: uppercase;
   padding: 16px 32px;
   background: rgba(178, 34, 34, 0.4);
   border: 2px solid #ffd700;
