@@ -329,17 +329,20 @@ button:active {
   color: #c9a24d;
   font-family: 'Rye', serif;
   font-size: 2.2rem;
-  margin: 0 0 30px 0;
   padding: 20px 40px;
-
   background: #2a1f14;
   border: 3px solid #c9a24d;
   border-radius: 4px;
-
-  /* Ombre portée rouge pour l'emphase */
   box-shadow: 6px 6px 0px #8b2c2c;
-
   animation: winPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 9999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-align: center;
+  pointer-events: none;
 }
 
 @keyframes winPop {
