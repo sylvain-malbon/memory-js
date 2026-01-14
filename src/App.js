@@ -23,7 +23,8 @@ function App() {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [win, setWin] = useState(false);
-  const [score, setScore] = useState(0);
+  const [tries, setTries] = useState(0); // nombre d'essais
+  const [success, setSuccess] = useState(0); // nombre de paires trouvées
 
   // Sélectionne les drapeaux selon la difficulté
   const getFlagsByDifficulty = () => {
@@ -61,7 +62,8 @@ function App() {
     setChoiceOne(null);
     setChoiceTwo(null);
     setWin(false);
-    setScore(0);
+    setTries(0);
+    setSuccess(0);
   };
 
   // Lancer une partie au chargement ou au changement de difficulté
@@ -85,6 +87,7 @@ function App() {
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
+      setTries((prev) => prev + 1); // chaque paire retournée = 1 essai
 
       if (choiceOne.image === choiceTwo.image) {
         // Marquer les cartes trouvées
@@ -93,7 +96,7 @@ function App() {
             card.image === choiceOne.image ? { ...card, matched: true } : card
           )
         );
-        setScore((prevScore) => prevScore + 1);
+        setSuccess((prev) => prev + 1); // succès = paires trouvées
         resetTurn();
       } else {
         // Retourner après un délai
@@ -115,6 +118,9 @@ function App() {
       setWin(true);
     }
   }, [cards]);
+
+  // Calcul du score : essais - succès
+  const score = tries - success;
 
   return (
     <div className="App">

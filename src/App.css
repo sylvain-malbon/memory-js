@@ -145,7 +145,7 @@ body {
 /* --- BOARD --- */
 .board {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 80px);
+  grid-template-columns: repeat(8, 80px);
   gap: 16px;
   justify-content: center;
   max-width: 900px;
