@@ -17,13 +17,35 @@ body {
 }
 
 /* --- TITLE --- */
-.App h1 {
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 30px;
+}
+
+.header-row h1 {
   font-size: 2.5rem;
   font-weight: 600;
   color: #ffd700;
-  margin: 0 0 30px 0;
+  margin: 0;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+.difficulty-and-restart {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.difficulty-label {
+  font-size: 1.1rem;
+  color: #ffd700;
+  font-weight: 500;
+  margin-right: 8px;
 }
 
 /* --- DIFFICULTY SELECTOR --- */
@@ -67,22 +89,22 @@ body {
 /* --- BOARD --- */
 .board {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 80px);
-  gap: 16px;
+  grid-template-columns: repeat(8, 120px);
+  gap: 24px;
   justify-content: center;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 40px;
   background: rgba(10, 30, 15, 0.5);
-  border-radius: 16px;
-  border: 1px solid rgba(212, 180, 76, 0.3);
+  border-radius: 20px;
+  border: 2px solid rgba(212, 180, 76, 0.4);
 }
 
 /* --- CARD CONTAINER --- */
 .card {
-  width: 80px;
-  height: 105px;
-  perspective: 1000px;
+  width: 120px;
+  height: 160px;
+  perspective: 1200px;
   cursor: pointer;
   transition: transform 0.15s ease;
 }
@@ -144,7 +166,7 @@ body {
 
 /* --- EMOJI --- */
 .emoji {
-  font-size: 2.8rem;
+  font-size: 4rem;
   transform: rotateY(180deg);
 }
 

@@ -101,11 +101,14 @@ function App() {
 
   return (
     <div className="App">
-      <Title />
-
-      <DifficultySelector value={difficulty} onChange={setDifficulty} />
-
-      <Button text="Relancer la partie" onClick={shuffleCards} />
+      <div className="header-row">
+        <h1>Memory Game</h1>
+        <div className="difficulty-and-restart">
+          <span className="difficulty-label">Niveau de diff :</span>
+          <DifficultySelector value={difficulty} onChange={setDifficulty} />
+          <Button text="Relancer la partie" onClick={shuffleCards} />
+        </div>
+      </div>
 
       {win && <p className="win">Bravo, vous avez gagné !</p>}
 
