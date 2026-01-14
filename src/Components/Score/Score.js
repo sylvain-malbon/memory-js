@@ -4,7 +4,7 @@ import './Score.css';
 function Score({ score }) {
     return (
         <div className="score-container">
-            <span>Score : </span>
+            <span className="title-tab score-label">Score :</span>
             <span className="score-value">{score}</span>
         </div>
     );

@@ -129,10 +129,8 @@ function App() {
       <div className="header-row">
         <div className="title-score-row">
           <Title />
-          <div className="score-restart-group">
-            <Button text="Relancer la partie" onClick={shuffleCards} className="restart-btn" />
-            <Score score={score} />
-          </div>
+          <Button text="Relancer la partie" onClick={shuffleCards} className="restart-btn" />
+          <Score score={score} />
         </div>
         <div className="difficulty-restart-row">
           <DifficultySelector value={difficulty} onChange={setDifficulty} />

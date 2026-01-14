@@ -71,11 +71,7 @@ body {
   margin: 0 auto 28px auto;
 }
 
-.score-restart-group {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
+
 
 /* ================================
    SCORE CONTAINER (Style de référence)
@@ -365,7 +361,7 @@ button:active {
 @media (max-width: 700px) {
   .title-score-row {
     flex-direction: row;
-    gap: 16px;
+    gap: 12px;
     justify-content: center;
     align-items: center;
   }
@@ -373,10 +369,6 @@ button:active {
   .App h1 {
     font-size: 1.2rem;
     margin-bottom: 0;
-  }
-
-  .score-restart-group {
-    gap: 16px;
   }
 
   .board {
