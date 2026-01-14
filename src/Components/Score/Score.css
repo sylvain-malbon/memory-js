@@ -1,7 +1,10 @@
+/* --- SCORE CONTAINER (WESTERN THEME) --- */
 .score-container {
   display: inline-block;
-  background: #d4b44c;
-  color: #1a3a1a;
+  background: #c9a24d;
+  /* or patiné */
+  color: #2a1f14;
+  /* brun foncé */
   border-radius: 8px;
   padding: 12px 32px;
   font-size: 1rem;
@@ -10,20 +13,23 @@
   letter-spacing: 1px;
   font-family: inherit;
   margin: 0 0 30px 0;
-  /* box-shadow supprimé */
   border: none;
   transition: all 0.2s ease;
 }
 
+/* --- SCORE HOVER / FOCUS --- */
 .score-container:hover,
 .score-container:focus {
-  background: #ffd700;
+  background: #e3c76a;
+  /* or clair */
   outline: none;
   transform: translateY(-1px);
 }
 
+/* --- SCORE VALUE --- */
 .score-value {
-  color: #b22222;
+  color: #8b2c2c;
+  /* rouge brique */
   margin-left: 0.5rem;
   font-weight: 700;
 }
