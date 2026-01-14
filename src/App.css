@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px 60px;
+  padding: 20px 20px 60px;
   text-align: center;
 }
 
@@ -20,17 +20,18 @@ body {
 
 .header-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 32px;
   margin-bottom: 30px;
+  margin-top: -10px;
 }
 
 .header-row h1 {
   font-size: 2.5rem;
   font-weight: 600;
   color: #ffd700;
-  margin: 0;
+  margin: 20px 0 0 0;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -39,6 +40,7 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  margin-top: 8px;
 }
 
 .difficulty-label {
@@ -52,7 +54,7 @@ body {
 .difficulty-selector {
   display: flex;
   gap: 12px;
-  margin: 0 0 30px 0;
+  margin: 0 0 10px 0;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -94,7 +96,7 @@ body {
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 30px 40px 40px 40px;
   background: rgba(10, 30, 15, 0.5);
   border-radius: 20px;
   border: 2px solid rgba(212, 180, 76, 0.4);
@@ -183,7 +185,7 @@ button {
   cursor: pointer;
   transition: all 0.2s ease;
   letter-spacing: 1px;
-  margin: 0 0 30px 0;
+  margin: 20px 0 30px 0;
 }
 
 button:hover,

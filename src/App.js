@@ -104,7 +104,7 @@ function App() {
       <div className="header-row">
         <h1>Memory Game</h1>
         <div className="difficulty-and-restart">
-          <span className="difficulty-label">Niveau de diff :</span>
+          {/* Suppression du texte 'Niveau de diff :' */}
           <DifficultySelector value={difficulty} onChange={setDifficulty} />
           <Button text="Relancer la partie" onClick={shuffleCards} />
         </div>
