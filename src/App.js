@@ -127,7 +127,7 @@ function App() {
 
       <div className="header-row">
         <div className="title-score-row">
-          <h1>Memory-JS</h1>
+          <Title />
           <Button text="Relancer la partie" onClick={shuffleCards} className="restart-btn" />
           <Score score={score} />
         </div>

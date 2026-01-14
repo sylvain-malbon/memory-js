@@ -1,0 +1,32 @@
+.title-tab {
+  background: #c9a24d;
+  color: #2a1f14;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 30px 0;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.title-tab:hover,
+.title-tab:focus {
+  background: #e3c76a;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.title-tab:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  .title-tab {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}

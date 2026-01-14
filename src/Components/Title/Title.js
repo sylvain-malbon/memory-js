@@ -1,7 +1,9 @@
+
 import React from 'react';
+import './Title.css';
 
 function Title() {
-    return <h1>Memory Game</h1>;
+    return <div className="title-tab">Memory-JS : Drapeaux</div>;
 }
 
 export default Title;
