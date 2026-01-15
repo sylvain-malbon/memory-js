@@ -5,6 +5,7 @@ import Button from "./Components/Button/Button";
 import Card from "./Components/Card/Card";
 import DifficultySelector from "./Components/DifficultySelector/DifficultySelector";
 import Score from "./Components/Score/Score";
+import WinModal from "./Components/WinModal/WinModal";
 
 // 48 drapeaux européens + occidentaux
 const allFlags = [
@@ -137,7 +138,7 @@ function App() {
         </div>
       </div>
 
-      {win && <p className="win">Bravo, vous avez gagné !</p>}
+      {win && <WinModal onClose={() => setWin(false)} />}
 
       <div className="board">
         {cards.map((card) => (
