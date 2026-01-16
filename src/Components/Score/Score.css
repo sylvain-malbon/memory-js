@@ -3,23 +3,24 @@
 
 /* --- SCORE CONTAINER (WESTERN THEME UPGRADED) --- */
 .score-container {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   background: #c9a24d;
   color: #2a1f14;
   border: 2px solid #2a1f14;
-  border-radius: 4px;
   padding: 0 32px;
   height: 48px;
   font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: 'Rye', 'Courier New', serif;
-  margin: 0 0 30px 0;
-  cursor: default;
+  font-family: 'Rye', serif;
+  margin: 0 0 0 auto;
   box-shadow: 4px 4px 0px #2a1f14;
   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: default;
+  gap: 0.5rem;
 }
 
 /* --- SCORE HOVER --- */
@@ -31,11 +32,29 @@
   /* L'ombre grandit */
 }
 
+/* --- SCORE LABEL --- */
+.score-label {
+  color: #2a1f14;
+  font-size: 1.1rem;
+  font-family: 'Rye', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0 10px 0 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  display: inline;
+}
+
 /* --- SCORE VALUE --- */
 .score-value {
   color: #8b2c2c;
-  margin-left: 0.5rem;
   font-weight: 700;
-  /* Petite ombre claire pour creuser le texte (optionnel) */
   text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+  font-size: 1.1rem;
+  margin-left: 0;
+  padding: 0;
+  display: inline;
 }

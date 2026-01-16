@@ -123,33 +123,48 @@ function App() {
   // Calcul du score : essais - succès
   const score = tries - success;
 
+  // Gestion du clic sur le logo/titre (rafraîchit la partie)
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    shuffleCards();
+  };
+
+  // Gestion du clic sur le score (exemple : reset score, ici on relance la partie)
+  const handleScoreClick = () => {
+    shuffleCards();
+  };
+
   return (
     <div className="App">
-
-
-      <div className="header-row">
-        <div className="title-score-row">
-          <Title />
-          <Button text="Relancer la partie" onClick={shuffleCards} className="restart-btn" />
-          <Score score={score} />
+      <div className="game-area">
+        <div className="top-bar">
+          <a href="#" className="site-logo-link" onClick={handleLogoClick} style={{ textDecoration: 'none' }}>
+            <span>
+              <Title asSpan />
+            </span>
+          </a>
+          <div className="restart-btn">
+            <Button text="Relancer la partie" onClick={shuffleCards} />
+          </div>
+          <div>
+            <Score score={score} onClick={handleScoreClick} clickable />
+          </div>
         </div>
-        <div className="difficulty-restart-row">
+        <div className="difficulty-bar">
           <DifficultySelector value={difficulty} onChange={setDifficulty} />
         </div>
-      </div>
-
-      {win && <WinModal onClose={() => setWin(false)} />}
-
-      <div className="board">
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            image={card.image}
-            flipped={card === choiceOne || card === choiceTwo || card.matched}
-            matched={card.matched}
-            onClick={() => handleChoice(card)}
-          />
-        ))}
+        {win && <WinModal onClose={() => setWin(false)} />}
+        <div className="board">
+          {cards.map((card) => (
+            <Card
+              key={card.id}
+              image={card.image}
+              flipped={card === choiceOne || card === choiceTwo || card.matched}
+              matched={card.matched}
+              onClick={() => handleChoice(card)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
