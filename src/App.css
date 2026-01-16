@@ -177,7 +177,7 @@ body {
   cursor: pointer;
   box-shadow: 3px 3px 0px #2a1f14;
   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  margin: 0;
+  margin: 0 2px; /* Rapprochement horizontal des boutons de 2px */
 }
 
 .difficulty-selector label:hover {
